@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Stars -->
+<div class="stars"></div>
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen">
+  <div class="heart-bg"></div>
+
+  <div class="lock-box">
+
+    <h2>For You 💖</h2>
+    <p class="sub">A small surprise awaits...</p>
+
+    <input type="password" id="password" placeholder="Enter password">
+
+    <button onclick="checkPassword()">Unlock</button>
+
+    <p class="hint">Hint: It's your name 💫</p>
+    <p id="error"></p>
+
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" class="hidden">
+
+<h1 id="mainHeading">Samridhi💕</h1> 
+
+  <!-- Music -->
+  <audio id="music" loop>
+  <source src="Bruno Mars - Just The Way You Are.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-control">
+  <button onclick="toggleMusic()" id="musicBtn">▶️</button>
+  <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3">
+</div>
+  <!-- Intro -->
+  <section>
+    <h1 id="typing"></h1>
+    <button onclick="scrollToSection('about')">Enter</button>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>Things I Like About You</h2>
+    <div class="cards">
+      <div class="card">Your eyes... they were the first thing I noticed</div>
+      <div class="card">The way you laugh makes everything feel lighter</div>
+      <div class="card">You have this calm, elegant vibe</div>
+      <div class="card">Everyone says you're funny—and I can feel that</div>
+    </div>
+  </section>
+
+  <!-- Photos -->
+  <section>
+    <h2>Some Beautiful Moments</h2>
+    <div class="gallery">
+
+      <div>
+        <img src="Samridhi (7).png" onclick="openModal(this)">
+        <p>Your smile here... it’s just perfect</p>
+      </div>
+
+      <div>
+        <img src="Samridhi (17).png" onclick="openModal(this)">
+        <p>I don’t know why, but this stayed in my mind</p>
+      </div>
+
+      <div>
+        <img src="Samridhi (30).png" onclick="openModal(this)">
+        <p>You look so effortlessly beautiful here</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Moments -->
+  <section>
+    <h2>Little Thoughts</h2>
+    <div class="timeline">
+      <div class="moment">We haven’t really talked yet...</div>
+      <div class="moment">But somehow, I still noticed you</div>
+      <div class="moment">And that made me curious about you</div>
+    </div>
+  </section>
+
+  <!-- Song -->
+  <section>
+    <h2>A Song That Reminds Me of You</h2>
+    <p>Just the Way You Are – Bruno Mars 🎵</p>
+  </section>
+
+  <!-- Secret -->
+  <section>
+    <button onclick="reveal()">Don't click this</button>
+    <p id="secret" class="hidden">
+      I don’t know where this will go...<br>
+      but I just wanted to say this honestly—<br>
+      I really like you ❤️<br><br>
+      If you ever feel the same... maybe we could start with a simple conversation.
+    </p>
+  </section>
+
+</div>
+
+<!-- Image Modal -->
+<div id="modal" class="hidden" onclick="closeModal()">
+  <img id="modalImg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

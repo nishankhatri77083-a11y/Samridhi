@@ -1,0 +1,350 @@
+/* ================= BODY ================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: black;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* ================= MAIN HEADING ================= */
+#mainHeading {
+  font-size: 80px;
+  color: #ff4da6;
+  text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff1a8c, 0 0 30px #ff77b1;
+  font-family: 'Segoe UI', sans-serif;
+  animation: pulseHeading 2s infinite;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+/* Glow pulse animation */
+@keyframes pulseHeading {
+  0% { text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff1a8c, 0 0 30px #ff77b1; }
+  50% { text-shadow: 0 0 20px #ff4da6, 0 0 40px #ff1a8c, 0 0 60px #ff77b1; }
+  100% { text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff1a8c, 0 0 30px #ff77b1; }
+}
+
+/* ================= STARS ================= */
+.stars {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: transparent url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 60s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveStars {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 5000px;}
+}
+
+/* ================= LOCK SCREEN ================= */
+#lockScreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* 💓 Pulsing heart background */
+.heart-bg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,77,166,0.5), transparent);
+  animation: pulse 2s infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 0.2; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* 🔮 Glass box */
+.lock-box {
+  position: relative;
+  z-index: 10;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  animation: fadeUp 1.2s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Glow border */
+.lock-box::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #ff4da6, transparent, #ff4da6);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.6;
+}
+
+/* Lock screen text */
+.lock-box h2 {
+  font-size: 30px;
+}
+
+.sub {
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+/* Input */
+.lock-box input {
+  padding: 12px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0;
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+  background: rgba(255,255,255,0.9);
+  color: black;
+}
+
+/* Glow on focus */
+.lock-box input:focus {
+  box-shadow: 0 0 15px #ff4da6;
+}
+
+/* Button */
+.lock-box button {
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  background: #ff4da6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.lock-box button:hover {
+  transform: scale(1.08);
+  background: #ff1a8c;
+}
+
+/* Hint */
+.hint {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 10px;
+}
+
+/* Error */
+#error {
+  color: #ff4d4d;
+  margin-top: 10px;
+}
+
+/* ❌ Shake animation */
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Fade in */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= BUTTONS ================= */
+button {
+  padding: 12px 25px;
+  border-radius: 20px;
+  border: none;
+  background: #ff4da6;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 100px 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================= CARDS ================= */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  width: 200px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+}
+
+/* ================= MODAL ================= */
+#modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal img {
+  max-width: 80%;
+}
+
+/* ================= HEARTS ================= */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  to { transform: translateY(-800px); opacity: 0; }
+}
+
+/* ================= MUSIC ================= */
+.music-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.music-control button {
+  font-size: 18px;
+  background: none;
+}
+
+.music-control input {
+  width: 80px;
+}
+
+/* ================= LAYERING ================= */
+#mainContent {
+  position: relative;
+  z-index: 10;
+}
+
+.stars {
+  z-index: 0;
+}
+
+.heart {
+  z-index: 1;
+}
+
+#lockScreen h2 {
+  color: white;
+  font-size: 28px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Main heading scale */
+@media (max-width: 1024px) {
+  #mainHeading { font-size: 60px; }
+}
+@media (max-width: 768px) {
+  #mainHeading { font-size: 45px; }
+}
+@media (max-width: 480px) {
+  #mainHeading { font-size: 35px; }
+}
+
+/* Section padding */
+@media (max-width: 1024px) { section { padding: 80px 15px; } }
+@media (max-width: 768px) { section { padding: 60px 10px; } }
+@media (max-width: 480px) { section { padding: 40px 10px; } }
+
+/* Cards layout */
+@media (max-width: 768px) { .card { width: 45%; padding: 15px; } }
+@media (max-width: 480px) { .card { width: 90%; padding: 12px; } }
+
+/* Gallery layout */
+@media (max-width: 768px) { .gallery img { width: 45%; } }
+@media (max-width: 480px) { .gallery img { width: 90%; } }
+
+/* Input and buttons */
+@media (max-width: 480px) {
+  input, .lock-box button { width: 90%; padding: 10px; }
+}
+
+/* Music controls on mobile */
+@media (max-width: 480px) {
+  .music-control {
+    top: auto;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 8px;
+    gap: 5px;
+  }
+  .music-control input { width: 60px; }
+  .music-control button { font-size: 16px; }
+}
